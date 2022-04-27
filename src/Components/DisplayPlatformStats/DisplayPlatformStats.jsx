@@ -21,7 +21,7 @@ const DisplayPlatformStats = ({games}) => {
 
       let platformArrays = distinctPlatforms.map(platform => {
 
-        let allGamesForPlatform = filteredGames.filter(game => game.platform == platform);
+        //let allGamesForPlatform = filteredGames.filter(game => game.platform === platform);
         
         return [platform, 10, "silver"]
       });
