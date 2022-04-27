@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
-import EntriesChart from './Components/EntriesChart/EntriesChart';
+import DisplayPlatformStats from './Components/DisplayPlatformStats/DisplayPlatformStats';
 import SearchBar from './Components/SearchBar/SearchBar';
 import DisplayGames from './Components/DisplayGames/DisplayGames';
+
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
       <h3> Video Games  </h3>
       <SearchBar getUserInput={getUserInput} userInput={userInput} />
       <DisplayGames games={games} userInput={userInput} />
-      <EntriesChart games={games} />
+      <DisplayPlatformStats games={games} />
+      
     </div>
   );
 }

@@ -6,7 +6,7 @@ const DisplayGames = (props) => {
       <table>
         <thead>
           <tr>
-
+            
           </tr>
         </thead>
         <tbody>
