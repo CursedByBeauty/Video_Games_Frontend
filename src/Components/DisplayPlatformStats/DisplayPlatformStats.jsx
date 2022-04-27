@@ -19,20 +19,32 @@ const DisplayPlatformStats = ({games}) => {
 
       console.log('Distinct Platforms', distinctPlatforms);
 
+      let platformArrays = distinctPlatforms.map(platform => {
+
+        let allGamesForPlatform = filteredGames.filter(game => game.platform == platform);
+        
+        return [platform, 10, "silver"]
+      });
+
+      console.log('Platform Arrays', platformArrays)
+
       const data = [
         ["Platform", "Sales", { role: "style"}],
-        ["PS4", 290, "blue"],
-        ["3DS", 250, "blue"],
-        ["XOne", 160, "blue"],
-        ["WiiU", 140, "blue"],
-        ["PS3", 975, "blue"],
-        ["X360", 985, "blue"],
-        ["PC", 225, "blue"],
-        ["Wii", 925, "blue"],
-        ["PSV", 50, "blue"],
-        ["DS", 810, "blue"],
-        ["PSP", 300, "blue"],
+          ...platformArrays
+        // ["PS4", 290, "blue"],
+        // ["3DS", 250, "blue"],
+        // ["XOne", 160, "blue"],
+        // ["WiiU", 140, "blue"],
+        // ["PS3", 975, "blue"],
+        // ["X360", 985, "blue"],
+        // ["PC", 225, "blue"],
+        // ["Wii", 925, "blue"],
+        // ["PSV", 50, "blue"],
+        // ["DS", 810, "blue"],
+        // ["PSP", 300, "blue"],
       ];
+
+      console.log('Data', data)
     
         return data;
     }
