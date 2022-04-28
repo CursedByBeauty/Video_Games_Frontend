@@ -44,7 +44,7 @@ function App() {
       <h3> Video Games  </h3>
       <SearchBar getUserInput={getUserInput} userInput={userInput} />
       <DisplayGames games={games} userInput={userInput} />
-      <DisplayPlatformStats games={games} />
+      <DisplayPlatformStats games={games} getname={getByName} />
       
     </div>
   );
