@@ -21,9 +21,21 @@ const DisplayPlatformStats = ({games}) => {
 
       let platformArrays = distinctPlatforms.map(platform => {
 
-        //let allGamesForPlatform = filteredGames.filter(game => game.platform === platform);
+        let allGamesForPlatform = filteredGames.filter(game => game.platform === platform);
+
+        let platformArrays = distinctPlatforms.map(platform => {
+          let total = 0 
+          filterGames.map(el=>{
+              if(el.platform == platform){
+                  total+= el.globalSales
+              }
+          })
         
-        return [platform, 10, "silver"]
+        // we need to loop through allGamesForPlatform and sum each games global sales
+        // once we have the sum of all of those games global sales we're going to take that sum 
+        // and place it where 10 is (between platform and "silver")
+        
+        return [platform, numbers, "silver"]
       });
 
       console.log('Platform Arrays', platformArrays)

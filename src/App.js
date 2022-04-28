@@ -35,7 +35,7 @@ function App() {
 
   const getUserInput = (event) => {
     setUserInput(event.target.value);
-  }};
+  };
 
 
 
@@ -48,6 +48,6 @@ function App() {
       
     </div>
   );
-}}
+}
 
 export default App;
