@@ -21,9 +21,23 @@ function App() {
     setGames(response.data);
   }
 
+  async function getByName(name) {
+    try {
+      let response = await axios.get(
+        `https://localhost:7260/api/games/Name/${name}`
+      );
+      console.log(response.data);
+      setGames(response.data);
+    } catch (error) {
+      
+    }
+  }
+
   const getUserInput = (event) => {
     setUserInput(event.target.value);
-  };
+  }};
+
+
 
   return (
     <div>
@@ -34,6 +48,6 @@ function App() {
       
     </div>
   );
-}
+}}
 
 export default App;
