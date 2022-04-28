@@ -6,9 +6,9 @@ const SearchBar = ({getUserInput, userInput}) => {
     return ( 
         <form>
             <div>
-                <label>Search</label>
-                <input name={''} type='search' className='form-control' value={userInput} onChange={(event) => getUserInput(event)}/>
                 
+                <input value={userInput} onChange={(event) => getUserInput(event)}/>
+                <button type="search" class="btn btn-primary">Search</button>
             </div>
         </form>
      );

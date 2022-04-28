@@ -10,7 +10,7 @@ const DisplayGames = (props) => {
           </tr>
         </thead>
         <tbody>
-          {/* {props.games
+          {props.games
             .filter((game) => {
 
               if (game.name.includes(props.userInput)) return true;
@@ -24,7 +24,7 @@ const DisplayGames = (props) => {
 
                 </tr>
               );
-            })} */}
+            })}
         </tbody>
       </table>
     </div>
