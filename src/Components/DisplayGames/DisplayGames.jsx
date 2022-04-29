@@ -21,6 +21,7 @@ const DisplayGames = (props) => {
                 <tr>
 
                   <td>{game.name}</td>
+                  <td>{game.platform}</td>
 
                 </tr>
               );

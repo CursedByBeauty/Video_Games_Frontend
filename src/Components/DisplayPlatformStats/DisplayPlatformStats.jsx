@@ -5,7 +5,7 @@ import React from 'react';
 const  DisplayPlatformStats = ({ games }) => {
 
   function generateDataForChart() {
-   let filteredGames = games.filter(game => game.year >= 2013)
+   let filteredGames = games.filter(game => game.year >= 1995)
 
    
 
@@ -36,7 +36,7 @@ const  DisplayPlatformStats = ({ games }) => {
     
     
     const data = [
-        ["Platform", "Sales (in millions)", { role: "style" }],
+        ["Platform", "Sales (Per millions)", { role: "style" }],
         ...platformArrays
       // ["PS4", 290, "blue"],
       // ["3DS", 250, "blue"],

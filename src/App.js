@@ -7,7 +7,7 @@ import DisplayGames from './Components/DisplayGames/DisplayGames';
 
 
 function App() {
-  const [entries, setEntries] = useState()
+  
   const [games, setGames] = useState([]);
   const [userInput, setUserInput] = useState("");
 
