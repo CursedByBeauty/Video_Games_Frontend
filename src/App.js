@@ -33,8 +33,12 @@ function App() {
     }
   }
 
-  const getUserInput = (event) => {
-    setUserInput(event.target.value);
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    let filteredGames = games.filter((game)=>{
+      if(game.name.includes(userInput)) return true
+    })
+    setGames(filteredGames)
   };
 
 
@@ -42,7 +46,7 @@ function App() {
   return (
     <div>
       <h3> Video Games  </h3>
-      <SearchBar getUserInput={getUserInput} userInput={userInput} />
+      <SearchBar setUserInput={setUserInput} userInput={userInput} handleSubmit = {handleSubmit}/>
       <DisplayGames games={games} userInput={userInput} />
       <DisplayPlatformStats games={games} getname={getByName} />
       

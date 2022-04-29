@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 
-const SearchBar = ({getUserInput, userInput}) => {
+const SearchBar = ({setUserInput, userInput, handleSubmit}) => {
 
 
     return ( 
-        <form>
-            <div>
+        <form onSubmit={(event)=>handleSubmit(event)}>
+           
                 
-                <input value={userInput} onChange={(event) => getUserInput(event)}/>
-                <button type="search" class="btn btn-primary">Search</button>
-            </div>
+                <input value = {userInput} onChange={(event) => setUserInput(event.target.value)}/>
+                <button type="submit" class="btn btn-primary">Search</button>
+          
         </form>
      );
 }
