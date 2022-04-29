@@ -9,7 +9,7 @@ import DisplayGames from './Components/DisplayGames/DisplayGames';
 function App() {
   
   const [games, setGames] = useState([]);
-  const [userInput, setUserInput] = useState("");
+  
 
   useEffect(() => {
     getAllVideoGames();
@@ -33,21 +33,15 @@ function App() {
     }
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    let filteredGames = games.filter((game)=>{
-      if(game.name.includes(userInput)) return true
-    })
-    setGames(filteredGames)
-  };
+  
 
 
 
   return (
     <div>
       <h3> Video Games  </h3>
-      <SearchBar setUserInput={setUserInput} userInput={userInput} handleSubmit = {handleSubmit}/>
-      <DisplayGames games={games} userInput={userInput} />
+      <SearchBar games = {games} setGames = {setGames} />
+      <DisplayGames games={games} />
       <DisplayPlatformStats games={games} getname={getByName} />
       
     </div>
