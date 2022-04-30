@@ -20,7 +20,7 @@ const DisplayGames = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.games.map((element) => {
+          {props.games.filter((game)=>{if(game.year >= 2013)return true}).map((element) => {
             return (
               <tr key={element.id}>
                 <td>{element.name}</td>

@@ -20,27 +20,11 @@ function App() {
     setGames(response.data);
   }
 
-  async function getByName(name) {
-    try {
-      let response = await axios.get(
-        `https://localhost:7260/api/games/Name/${name}`
-      );
-      console.log(response.data);
-      setGames(response.data);
-    } catch (error) {
-      
-    }
-  }
-
-  
-
-
-
   return (
     <div>
       <h3> Video Games  </h3>
       <SearchBar games = {games} setGames = {setGames} />
-      <DisplayPlatformStats games={games} getname={getByName} />
+      <DisplayPlatformStats games={games} />
       <DisplayGames games={games} setGames = {setGames}/>
       
     </div>
