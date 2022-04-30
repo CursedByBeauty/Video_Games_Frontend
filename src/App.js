@@ -41,7 +41,7 @@ function App() {
       <h3> Video Games  </h3>
       <SearchBar games = {games} setGames = {setGames} />
       <DisplayPlatformStats games={games} getname={getByName} />
-      <DisplayGames games={games} />
+      <DisplayGames games={games} setGames = {setGames}/>
       
     </div>
   );

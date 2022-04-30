@@ -7,7 +7,9 @@ const SearchBar = (props) => {
         event.preventDefault();
         let filteredGames = props.games.filter((game) => {
             if (game.name.includes(userInput)) { return true };
-        })}
+        })
+    props.setGames(filteredGames)
+    }
     return (
         <form onSubmit={handleSubmit}>
 

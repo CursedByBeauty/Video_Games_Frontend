@@ -2,36 +2,26 @@ import { Chart } from "react-google-charts";
 import React from 'react';
 
 
-const DisplayPlatformStats = ({ games }) => {
+const DisplayPlatformStats = (props) => {
 
   function generateDataForChart() {
-    let filteredGames = games.filter(game => game.year >= 2013)
-
-
-
+    let filteredGames = props.games.filter(game => game.year >= 2013)
     let platforms = filteredGames.map(game => {
       return game.platform
     });
-
-
     let distinctPlatforms = [...new Set(platforms)]
-
     let platformArrays = distinctPlatforms.map(platform => {
-
       let allGames = filteredGames.filter(game => game.platform === platform);
-
-
-
       let globalSales = allGames.map(game => {
         return game.globalSales
       });
 
       let sum = globalSales.reduce(
         (total, currentValue) => total + currentValue, 0).toFixed(2);
-
       return [platform, parseFloat(sum), "blue"]
     });
-
+    
+    
 
 
     const data = [

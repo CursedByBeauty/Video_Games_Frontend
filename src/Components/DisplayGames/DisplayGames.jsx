@@ -1,6 +1,12 @@
 import React from "react";
-import Buttons from '../GamePerConsoleChart/Buttons'
+
 const DisplayGames = (props) => {
+  function findGames(name) {
+    let singleGame = props.games.filter((game) => {
+        if (game.name === name) { return true }
+    })
+    props.setGames(singleGame)
+  }
   return (
     <div>
       <table className= 'table'>
@@ -22,7 +28,7 @@ const DisplayGames = (props) => {
                 <td>{element.year}</td>
                 <td>{element.genre}</td>
                 <td>{element.publisher}</td>
-                <td><Buttons currentName ={element.name} games ={props.games}/></td>
+                <td><button onClick={(e) => {findGames(element.name)}}>View Status</button></td>
               </tr>
             );
 
