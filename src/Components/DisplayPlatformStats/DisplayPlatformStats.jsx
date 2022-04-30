@@ -1,9 +1,13 @@
 import { Chart } from "react-google-charts";
-import React from 'react';
+import React, {useState} from 'react';
 
 
 const DisplayPlatformStats = (props) => {
-
+  const [title, setTitle] = useState({
+    title:"Sales Per Platform",
+    vAxis: {title: "Sales"},
+    hAxis: {title: "Platform"}
+  })
   function generateDataForChart() {
     let filteredGames = props.games.filter(game => game.year >= 2013)
     let platforms = filteredGames.map(game => {
@@ -21,22 +25,17 @@ const DisplayPlatformStats = (props) => {
       return [platform, parseFloat(sum), "blue"]
     });
     
-    
-
-
     const data = [
       ["Platform", "Sales (Per millions)", { role: "style" }],
       ...platformArrays
     ];
-
-
-
-    return data;
+    return data
   }
 
 
   return (
-    <Chart chartType="ColumnChart" width="100%" height="400px" data={generateDataForChart()} />
+    
+    <Chart chartType="ColumnChart" width="100%" height="400px" data={generateDataForChart()} options= {title}/>
   );
 
 }
