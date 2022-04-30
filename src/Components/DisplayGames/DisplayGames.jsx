@@ -1,5 +1,5 @@
 import React from "react";
-
+import Buttons from '../GamePerConsoleChart/Buttons'
 const DisplayGames = (props) => {
   return (
     <div>
@@ -22,7 +22,7 @@ const DisplayGames = (props) => {
                 <td>{element.year}</td>
                 <td>{element.genre}</td>
                 <td>{element.publisher}</td>
-
+                <td><Buttons currentName ={element.name} games ={props.games}/></td>
               </tr>
             );
 
