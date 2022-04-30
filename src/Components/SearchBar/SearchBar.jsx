@@ -7,15 +7,15 @@ const SearchBar = (props) => {
         event.preventDefault();
         let filteredGames = props.games.filter((game) => {
             if (game.name.includes(userInput)) { return true };
-        return filteredGames
         })
         props.setGames(filteredGames)
+        
     }
 
     return (
-        <form onSubmit={(event) => handleSubmit(event)}>
+        <form onSubmit={handleSubmit}>
 
-            <input value={userInput} onChange={(event) => setUserInput(event.target.value)} />
+            <input value={userInput} onChange={(e) => setUserInput(e.target.value)} />
             <button type="submit" className="btn btn-primary">Search</button>
 
         </form>

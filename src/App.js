@@ -13,7 +13,6 @@ function App() {
 
   useEffect(() => {
     getAllVideoGames();
-    console.log("useEfect");
   }, []);
 
   async function getAllVideoGames() {
@@ -41,8 +40,8 @@ function App() {
     <div>
       <h3> Video Games  </h3>
       <SearchBar games = {games} setGames = {setGames} />
-      <DisplayGames games={games} />
       <DisplayPlatformStats games={games} getname={getByName} />
+      <DisplayGames games={games} />
       
     </div>
   );
